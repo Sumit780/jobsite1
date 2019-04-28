@@ -1,0 +1,22 @@
+<div class="p-2">
+    <h6>Refine Result</h6>
+    <hr>
+    <h6>Skills</h6>
+    <div *ngFor="let skill of skills;let j=index;">
+        <input type="checkbox" name="checkbox" id="checkbox{{i}}" [(ngModel)]="skill.value" (change)="skillFilter()">
+        <label for="checkbox{{i}}">{{skill.name}}</label>
+    </div>
+    <hr>
+    <h6>locations</h6>
+    <div *ngFor="let location of locations;let j=index;">
+        <input type="checkbox" name="checkbox" id="checkbox{{j}}" [(ngModel)]="location.value" (change)="locationFilter()">
+        <label for="{checkbox{{j}}">{{location.name}}</label>
+    </div>
+    <hr>
+    <h6>Fresherness</h6>
+    <select class="form-control" (change)="findValue()" [(ngModel)]="option">
+<option *ngFor="let opt of ddoption">{{opt.display}}</option>
+</select>
+    <br>
+    <br>
+</div>
